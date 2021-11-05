@@ -1,0 +1,127 @@
+#未使用
+
+if (stageCount == 1) { /* stage1(ルーミア) */
+    var data = document.getElementById('main-data');
+    data.textContent = String("ルーミア　HP：" + enemyHP + "/" + rumia.hp);
+
+    /* ルーミアの状態（残りHPから分岐） */
+    var m_log = document.getElementById('main-log');
+    if (turnCount == 1) {
+        m_log.textContent = String("ルーミアが現れた！");
+    } else {
+        if (enemyHP > 2000) {
+            m_log.textContent = String("ルーミアはやる気に満ち溢れている。");
+        }
+        else if (enemyHP <= 2000 && enemyHP > 0) {
+            m_log.textContent = String("ルーミアは弱っているように見える。");
+        }
+        else {
+            m_log.textContent = String("ルーミアは倒れた！");
+        }
+    }
+
+    var e_total = document.getElementById("e-total");
+    e_total.textContent = String(rumia.calcStatus());
+}
+
+else if (stageCount == 2) { /* stage2(雛) */
+    var data = document.getElementById('main-data');
+    data.textContent = String("雛　HP：" + enemyHP + "/" + hina.hp);
+
+    var m_log = document.getElementById('main-log');
+    m_log.textContent = String("雛が現れた！");
+
+    var e_total = document.getElementById("e-total");
+    e_total.textContent = String(hina.calcStatus());
+}
+
+
+if (stageCount == 1) { /* stage1(ルーミア) */
+    /* 先攻後攻 */
+    if (enemySP > playerSP) {
+        rumiaAction();
+        satoriAction(); // プレイヤー選択制の際に改良予定
+    } else {
+        satoriAction(); // プレイヤー選択制の際に改良予定
+        rumiaAction();
+    }
+
+    turnCount++;
+    console.log(turnCount + "ターン");
+    console.log("ルーミア", enemyHP);
+    showImage();
+    showLog();
+    if (enemyHP <= 0) {
+        enemyHP = 0;
+        console.log("ルーミアは倒れた！");
+    }
+}
+
+if (stageCount == 2) { /* stage2(雛) */
+    /*  */
+}
+
+
+function damageCalcEnemy(params) {
+    var damage = 0;
+    damage = params;
+    enemyHP -= params;
+    console.log("ルーミアに" + damage + "ダメージ！");
+}
+
+function damageCalcPlayer(params) {
+    var damage = 0;
+    damage = params;
+    playerHP -= params;
+    console.log("さとりに" + damage + "ダメージ！");
+}
+
+function satoriAction() {
+    var ac = document.getElementById('main-log');
+    ac.textContent = String("さとりの攻撃！");
+    damageCalcEnemy(playerMA+playerPA);
+}
+
+function rumiaAction() {
+    var ac = document.getElementById('main-log');
+    ac.textContent = String("ルーミアの攻撃！");
+    damageCalcPlayer(enemyMA);
+}
+
+playerReuseTurnSKL1 = judgeSkillReuse(ALLOWplayerSKL1, playerReuseTurnSKL1);
+    playerReuseTurnSKL2 = judgeSkillReuse(ALLOWplayerSKL2, playerReuseTurnSKL2);
+    playerReuseTurnSKL3 = judgeSkillReuse(ALLOWplayerSKL3, playerReuseTurnSKL3);
+
+if (allow == 0) { /* スキル使用不可 */
+        count--;
+    }
+    return count;
+
+
+
+if (ALLOWplayerSKL1 == 0) { /* 使用不可なら再使用可能ターンをデクリメント */
+            if (playerReuseTurnSKL1 == 1) { /* 使用可能ターン経過時、再使用可能（NextTrun時に呼ばれるので、残り１ターン→更新→残り０ターン｛ここで使用可能になる｝ために==1となっている。） */
+                ALLOWplayerSKL1 = 1;
+                return;
+            }
+            playerReuseTurnSKL1--;
+        } 
+
+if (enemyNum == 1) { /* enemy1(ルーミア) */
+        DecideRumia();
+    }
+    if (enemyNum == 2) { /* enemy2(雛) */
+        DecideHina();
+    }
+    if (enemyNum == 3) { /* enemy3(アリス) */
+        DecideArice();
+    }
+    if (enemyNum == 4) { /* enemy4(さとり) */
+        DecideSatori();
+    }
+    if (enemyNum == 5) { /* enemy5(早苗) */
+        DecideSanae();
+    }
+    if (enemyNum == 6) { /* enemy6(輝夜) */
+        DecideKaguya();
+    }

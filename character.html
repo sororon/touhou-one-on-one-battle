@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/main.js"></script>
+
+    <title>Character-html</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1 class="headline">東方バトルシミュレーション</h1>
+        <ul class="nav-list">
+            <li class="nav-list-item"><a href="index.html">Home</a></li>
+            <li class="nav-list-item"><a href="character.html">Character(now)</a></li>
+            <li class="nav-list-item">About</li>
+            <li class="nav-list-item">Topic</li>
+        </ul>
+    </header>
+
+    <h2>キャラクターの一覧</h2>
+    <p>ボタンをクリックするとキャラクターのステータスを表示できます。</p>
+
+    <!-- Display status -->
+    <div>
+        <h3><span id="name">---</span></h3>
+        <h4>総合力:<span id="total">0</span></h4>
+        <p>体力:<span id="hp">0</span>　陽攻:<span id="ph_at">0</span>　陽防:<span id="ph_df">0</span>　陰攻:<span id="mg_at">0</span>　陰防:<span id="mg_df">0</span>　速力:<span id="sp">0</span></p>
+    </div>
+
+    <!-- Image and button -->
+    <div>
+        <!-- ルーミア -->
+        <img src="static/img/rumia-nomal.png" alt="ルーミア" width="200" height="200">
+        <button onclick="showStatus(rumia)" type="button" class="btn btn-info">Rumia status open</button>
+        <!-- 雛 -->
+        <img src="static/img/hina-nomal.jpg" alt="雛" width="200" height="200">
+        <button onclick="showStatus(hina)" type="button" class="btn btn-info">Hina status open</button>
+        <!-- アリス -->
+        <img src="static/img/arice-nomal.png" alt="アリス" width="200" height="200">
+        <button onclick="showStatus(arice)" type="button" class="btn btn-info">Arice status open</button>
+        <!-- さとり -->
+        <img src="static/img/satori_nomal.png" alt="さとり" width="200" height="200">
+        <button onclick="showStatus(satori)" type="button" class="btn btn-info">Satori status open</button>
+        <!-- 早苗 -->
+        <img src="static/img/sanae-nomal.jpg" alt="早苗" width="200" height="200">
+        <button onclick="showStatus(sanae)" type="button" class="btn btn-info">Sanae status open</button>
+        <!-- 輝夜 -->
+        <img src="static/img/kaguya-nomal.jpg" alt="輝夜" width="200" height="200">
+        <button onclick="showStatus(kaguya)" type="button" class="btn btn-info">Kaguya status open</button>
+    </div>
+
+    <!-- jQuery読み込み JSよりも先に -->
+    <script src="bootstrap/jquery-3.5.1.min.js"></script>
+    <!-- popper.js js読み込み -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="center">
+        <p>東方バトルシミュレーションは『東方Project』を原作とした二次創作作品です。</p>
+        <p>『東方Project』及び関連タイトルは上海アリス幻樂団の著作物です。</p>
+    </footer>
+</body>
+</html>

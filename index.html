@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/main.js"></script>
+
+    <title>index-html</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1 class="headline">東方バトルシミュレーション</h1>
+        <ul class="nav-list">
+            <li class="nav-list-item"><a href="index.html">Home(now)</a></li>
+            <li class="nav-list-item"><a href="character.html">Character</a></li>
+            <li class="nav-list-item">About</li>
+            <li class="nav-list-item">Topic</li>
+        </ul>
+    </header>
+
+    <!-- ゲームの説明 -->
+    <div class="center">
+        <h3>キャラクターに指示を送って敵を倒そう！</h3>
+        <h3>全部で６ステージ！</h3>
+        <h3>スペルカードを駆使して攻略しよう！</h3>
+        <div>例：
+            <button type="button" class="btn btn-info" disabled>拡散ショット（陽攻）</button>
+            <button type="button" class="btn btn-primary" disabled>集中ショット（陰攻）</button>
+            <button type="button" class="btn btn-success" disabled>スペルカード１（陽攻）</button>
+            <button type="button" class="btn btn-warning" disabled>スペルカード２（陰攻）</button>
+            <button type="button" class="btn btn-danger" disabled>ラストワード</button>
+        </div>
+        <h5>→→右に行くほど威力が大きい！→→</h5>
+        <h6>※キャラクターによって能力（陽攻や陰攻）は異なるので、全てにおいて当てはまるわけではありません。</h6>
+        <h4>スペルカードの使用は３回、ラストワードの使用は１回まで！使いどころが大事！</h4>
+        <p></p>
+        <h3>結界を使用することで敵の攻撃を無効化できる！使いどころを見極めよう！</h3>
+        <div>
+            <button type="button" class="btn btn-light" disabled>結界使用</button>
+        </div>
+        <h5>↑クリックで使用、再度クリックすると解除できます↑</h5>
+        <p></p>
+        <h3>スキルを使用して自機キャラを強化しよう！</h3>
+        <div>
+            <button type="button" class="btn btn-secondary" disabled>スキル１</button>
+            <button type="button" class="btn btn-secondary" disabled>スキル２</button>
+            <button type="button" class="btn btn-secondary" disabled>スキル３</button>
+        </div>
+        <h5>スキル再使用にはターン制限あり！効果も永続ではないのでご注意！</h5>
+        <p></p>
+        <h6>※F11を押すなど、大画面でのプレイを推奨します。</h6>
+        <button type="button" class="btn btn-dark" onclick="location.href='game.html'">ゲームを開始する！</button>
+        
+    </div>
+    <p></p>
+
+    <!-- jQuery読み込み JSよりも先に -->
+    <script src="bootstrap/jquery-3.5.1.min.js"></script>
+    <!-- popper.js js読み込み -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="center">
+        <p>東方バトルシミュレーションは『東方Project』を原作とした二次創作作品です。</p>
+        <p>『東方Project』及び関連タイトルは上海アリス幻樂団の著作物です。</p>
+        <p>画像ははるかさん（https://seiga.nicovideo.jp/user/illust/3494232）のものを利用させて頂きました。</p>
+    </footer>
+</body>
+</html>
